@@ -1,0 +1,11 @@
+<header>
+  <h1>Welcome to {{ title }}!</h1>
+  <ul>
+    <li><a routerLink = "/" routerLinkActive="active"><span class="glyphicon glyphicon-home"></span> &nbsp;Home</a></li>
+    <li><a routerLink = "/directory" routerLinkActive="active"><span class="glyphicon glyphicon-pencil"></span> &nbsp;List Of Pencils</a></li>
+  </ul>
+</header>
+<section id="main">
+  <!--<app-home [myBike]="myBike" (myYell)="onYell($event)">Loading...</app-home>-->
+  <router-outlet></router-outlet>
+</section>

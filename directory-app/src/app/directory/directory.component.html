@@ -1,0 +1,28 @@
+<!--<p [ngClass]= "classes">
+  directory works! Welcome {{name}}
+</p>
+
+<p *ngIf="ngIfIndicator">This is ngIf turned on.</p>
+
+<style>
+  .blue{color:blue;}
+  .red{color:red;}
+  .underline{text-decoration: underline;}
+</style>-->
+<p><strong>Pencil List:</strong></p>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <input type="text" class="form-control" [ngModelOptions]="{standalone:true}" [(ngModel)]="term" placeholder="Type a color you are searching for..." autofocus/>
+    </div>
+  </div>
+
+<ul class="list-group">
+  <li *ngFor="let pencil of myPencil | filter:term">
+    <a class="list-group-item" href="#">
+      <span class="glyphicon glyphicon-pencil" [ngStyle]="{color: pencil.color}"></span>
+      <span [ngStyle]="{color: pencil.color}">{{pencil.stock}} <b>{{pencil.color}} PENCIL(s)</b></span></a>
+  </li>
+</ul>
+<!--
+<button (click)="logIt()">Log</button>-->

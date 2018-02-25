@@ -1,0 +1,33 @@
+<p>
+  {{ title }}
+</p><br/>
+<ng-content></ng-content>
+<h4>Click the button to get an alert, type your text and click the button</h4>
+<p>
+  <input [(ngModel)]= "myString" />
+  <button (click)="myAlert(myString)"> Click Me to test on click event</button>
+</p>
+<br/>
+<h4>With angular 2, you can directly change an object's value from the interface by using <code>[(ngModule)]</code>. Thanks to Angular 2</h4>
+<p>
+  <label>Merk:</label>
+  <input [(ngModel)]="myCar.merk" />
+  <label>Type:</label>
+  <input [(ngModel)]="myCar.type" /><br/>
+  My Car: {{myCar.merk}} {{myCar.type}}
+</p>
+<br/>
+<h4>This is simple calculator:</h4>
+<div style="height:40px;">
+  <label>Pilih Operator :</label>
+  <select [(ngModel)]="selected_operator" (change)="clear()">
+    <option *ngFor="let operator of myOperator">{{operator}}</option>
+  </select><br/>
+  <input type="number" [(ngModel)]="num1" (input)="doCount(num1, num2)"/> <span>{{selected_operator}}</span> <input type="number" [(ngModel)]="num2" (input)="doCount(num1, num2)"/> = <span>{{result}}</span>
+</div>
+<!--<p>
+  My Bike: {{myBike.merk}} {{myBike.type}}
+</p>-->
+<!--<p>
+  <button (click)="functionYell($event)"> Sent event to root page</button>
+</p>-->
